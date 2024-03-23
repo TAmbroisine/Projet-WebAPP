@@ -2,7 +2,7 @@ package com.takima.backskeleton.services;
 
 import com.takima.backskeleton.DAO.MajorDao;
 import com.takima.backskeleton.models.Major;
-import com.takima.backskeleton.models.Student;
+import com.takima.backskeleton.models.Buyer;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -20,7 +20,7 @@ public class MajorService {
         return majors;
     }
 
-    public List<Student> getStudentsOfMajor(Long id) {
-        return majorDao.getAllStudentsFromMajor(id);
+    public List<Buyer> getBuyersOfMajor(Long id) {
+        return majorDao.getAllBuyersFromMajor(id);
     }
 }
