@@ -13,6 +13,7 @@ CREATE TABLE Buyer(
 
 CREATE TABLE Delivery_details(
                                  Delivery_ID serial,
+                                 Buy_ID serial,
                                  Address_Line_1 VARCHAR(50),
                                  Address_Line_2 VARCHAR(50),
                                  City VARCHAR(50),
@@ -21,7 +22,8 @@ CREATE TABLE Delivery_details(
                                  Phone_number VARCHAR(50),
                                  Fname VARCHAR(50),
                                  Lname VARCHAR(50),
-                                 PRIMARY KEY(Delivery_ID)
+                                 PRIMARY KEY(Delivery_ID,Buy_ID),
+                                 FOREIGN KEY (Buy_ID) REFERENCES Buyer(Buy_ID)
 );
 
 CREATE TABLE Payment_details(
@@ -65,22 +67,6 @@ CREATE TABLE Administrator(
                               Fname VARCHAR(50),
                               Lname VARCHAR(50),
                               PRIMARY KEY(Admin_ID)
-);
-
-CREATE TABLE Live_at(
-                        Buy_ID serial,
-                        Delivery_ID serial,
-                        PRIMARY KEY(Buy_ID, Delivery_ID),
-                        FOREIGN KEY(Buy_ID) REFERENCES Buyer(Buy_ID),
-                        FOREIGN KEY(Delivery_ID) REFERENCES Delivery_details(Delivery_ID)
-);
-
-CREATE TABLE Have(
-                     Buy_ID serial,
-                     Card_Number BIGINT,
-                     PRIMARY KEY(Buy_ID, Card_Number),
-                     FOREIGN KEY(Buy_ID) REFERENCES Buyer(Buy_ID),
-                     FOREIGN KEY(Card_Number) REFERENCES Payment_details(Card_Number)
 );
 
 CREATE TABLE In_cart(
