@@ -16,5 +16,8 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ProductController {
 
-    //private final ProductService productService;
+    private final ProductService productService;
+
+    @GetMapping("")
+    public List<Product> getAllProducts() { return productService.findAll();}
 }
