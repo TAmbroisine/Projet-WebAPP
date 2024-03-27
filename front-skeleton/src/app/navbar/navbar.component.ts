@@ -6,11 +6,14 @@ import { Link } from "models/links.model"
   templateUrl: "./navbar.component.html",
   styleUrls: ["./navbar.component.scss"],
 })
+
 export class NavbarComponent {
   links: Link[] = []
 
   constructor() {
     this.links.push({ name: "Étudiants", href: "etudiants" })
     this.links.push({ name: "Filières", href: "filieres" })
+    this.links.push({ name: "Cart", href: "cart" })
+    this.links.push({ name: "Cart", href: "cart" })
   }
 }
