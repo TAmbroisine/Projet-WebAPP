@@ -22,8 +22,8 @@ public class Buyer {
     @Column(name="mail")
     private String email;
 
-    @OneToMany(mappedBy = "buyer")
-    private List<In_Cart> inCart;
+    @OneToOne(cascade = CascadeType.ALL)
+    private In_Cart inCart;
 
     private Buyer(Builder builder) {
         this.id = builder.id;
@@ -40,7 +40,7 @@ public class Buyer {
         private String firstName;
         private String lastName;
         private String email;
-        private List<In_Cart> inCart;
+        private In_Cart inCart;
 
         public Builder id (Long id) {
             this.id = id;
@@ -61,7 +61,7 @@ public class Buyer {
             return this;
         }
 
-        public Builder inCart(List<In_Cart> inCart) {
+        public Builder inCart(In_Cart inCart) {
             this.inCart = inCart;
             return this;
         }
