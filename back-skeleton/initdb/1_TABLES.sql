@@ -44,6 +44,7 @@ CREATE TABLE Product(
                         picture VARCHAR(50),
                         sellType VARCHAR(50),
                         Deleted_ boolean,
+                        seller_id int null,
                         PRIMARY KEY(Product_ID)
 );
 
