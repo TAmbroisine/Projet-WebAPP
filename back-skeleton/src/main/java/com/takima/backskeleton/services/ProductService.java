@@ -20,9 +20,9 @@ public class ProductService {
 
     public List<Product> findAll() {
         Iterable<Product> it = productDao.findAll();
-        List <Product> users = new ArrayList<>();
-        it.forEach(users::add);
-        return users ;
+        List <Product> products = new ArrayList<>();
+        it.forEach(products::add);
+        return products ;
     }
 
     public Product getById(Long id) {
@@ -59,4 +59,7 @@ public class ProductService {
         productDao.save(product);
     }
 
+    public List<Product> searchBySeller(Integer sellerId) {
+        return productDao.findBySellerId(sellerId);
+    }
 }

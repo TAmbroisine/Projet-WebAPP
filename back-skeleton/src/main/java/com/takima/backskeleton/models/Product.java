@@ -1,6 +1,7 @@
 package com.takima.backskeleton.models;
 
 import jakarta.persistence.*;
+import lombok.Data;
 import lombok.Getter;
 
 import java.util.List;
@@ -26,12 +27,17 @@ public class Product {
     @OneToMany(mappedBy = "product")
     private List<In_Cart> inCarts;
 
+    @ManyToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "seller")
+    private Seller seller;
+
     private Product(Product.Builder builder) {
         this.id = builder.id;
         this.name = builder.name;
         this.price = builder.price;
         this.inCarts = builder.inCarts;
         this.category = builder.category;
+        this.seller = builder.seller;
     }
     public Product() {
     }
@@ -42,6 +48,8 @@ public class Product {
         private float price;
         private String category;
         private List<In_Cart> inCarts;
+
+        private Seller seller;
 
         public Product.Builder id (Long id) {
             this.id = id;
@@ -64,6 +72,11 @@ public class Product {
 
         public Product.Builder inCarts(List<In_Cart> inCarts) {
             this.inCarts = inCarts;
+            return this;
+        }
+
+        public Product.Builder seller(Seller seller){
+            this.seller = seller;
             return this;
         }
 
