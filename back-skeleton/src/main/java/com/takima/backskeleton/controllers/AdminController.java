@@ -15,10 +15,7 @@ import java.util.List;
 public class AdminController {
     private final AdminService adminService;
     @GetMapping("")
-    public List<Admin> listAdmins(@RequestParam(required = false) Integer majorId, @RequestParam(required = false) Integer sellerId) {
-        if (majorId != null && sellerId !=null) {
-            return adminService.searchByMajorAndSeller(majorId, sellerId);
-        }
+    public List<Admin> listAdmins() {
         return adminService.findAll();
     }
 

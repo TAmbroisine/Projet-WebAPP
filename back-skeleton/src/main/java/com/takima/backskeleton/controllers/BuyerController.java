@@ -15,10 +15,7 @@ import java.util.List;
 public class BuyerController {
     private final BuyerService buyerService;
     @GetMapping("")
-    public List<Buyer> listBuyers(@RequestParam(required = false) Integer majorId, @RequestParam(required = false) Integer sellerId) {
-        if (majorId != null && sellerId !=null) {
-            return buyerService.searchByMajorAndSeller(majorId, sellerId);
-        }
+    public List<Buyer> listBuyers() {
         return buyerService.findAll();
     }
 

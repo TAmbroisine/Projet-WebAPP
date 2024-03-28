@@ -9,6 +9,5 @@ import java.util.List;
 
 @Repository
 public interface AdminDao extends JpaRepository<Admin, Long> {
-    @Query("SELECT s FROM Admin s JOIN s.inCarts c WHERE c.id= :sellerId AND s.major.id = :majorId ")
-    List<Admin> findByMajorIdAndSellerId(int majorId, int sellerId);
+
 }

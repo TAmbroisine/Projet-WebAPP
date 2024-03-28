@@ -59,7 +59,4 @@ public class BuyerService {
         buyerDao.save(buyer);
     }
 
-    public List<Buyer> searchByMajorAndSeller(int majorId, int sellerId) {
-        return buyerDao.findByMajorIdAndSellerId(majorId, sellerId);
-    }
 }

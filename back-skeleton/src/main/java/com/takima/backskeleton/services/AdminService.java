@@ -59,7 +59,4 @@ public class AdminService {
         adminDao.save(admin);
     }
 
-    public List<Admin> searchByMajorAndSeller(int majorId, int sellerId) {
-        return adminDao.findByMajorIdAndSellerId(majorId, sellerId);
-    }
 }
