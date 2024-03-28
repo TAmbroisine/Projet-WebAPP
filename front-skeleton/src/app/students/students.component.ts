@@ -13,7 +13,6 @@ import { StudentService } from "services/student.service"
 export class StudentsComponent {
 
   constructor(private _route: ActivatedRoute, private studentService: StudentService, private router: Router) {}
-
   
   students$: Observable<Student[]> =  this.studentService.findAll()
 

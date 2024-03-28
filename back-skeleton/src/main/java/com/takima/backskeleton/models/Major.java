@@ -19,7 +19,7 @@ public class Major {
     private String description;
     @OneToMany(mappedBy = "major")
     @JsonIgnore
-    private List<Student> students;
+    private List<Buyer> buyers;
 
 }
 
