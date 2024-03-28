@@ -30,7 +30,7 @@ public class DeliveryDetails {
     private String lastName;
 
     @ManyToOne(cascade = CascadeType.MERGE)
-    @Column(name = "buy_id")
+    @JoinColumn(name = "buy_id")
     private Buyer buyer;
 
     private DeliveryDetails(Builder deliveryDetails) {

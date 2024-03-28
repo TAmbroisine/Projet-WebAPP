@@ -25,6 +25,9 @@ public class Buyer {
     @OneToOne(cascade = CascadeType.ALL)
     private In_Cart inCart;
 
+    @OneToMany(cascade = CascadeType.MERGE)
+    private List<DeliveryDetails> deliveryDetails;
+
     private Buyer(Builder builder) {
         this.id = builder.id;
         this.firstName = builder.firstName;

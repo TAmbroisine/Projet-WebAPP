@@ -24,11 +24,11 @@ public class Product {
     @Column(name = "category")
     private String category;
 
-    @OneToMany(mappedBy = "product")
+    @ManyToMany(cascade = CascadeType.MERGE)
     private List<In_Cart> inCarts;
 
     @ManyToOne(cascade = CascadeType.MERGE)
-    @JoinColumn(name = "seller")
+    @JoinColumn(name = "seller_id")
     private Seller seller;
 
     private Product(Product.Builder builder) {

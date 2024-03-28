@@ -11,5 +11,5 @@ public class BuyerDto {
     private String firstName;
     private String lastName;
     private String email;
-    private List<In_Cart> inCart;
+    private In_Cart inCart;
 }
