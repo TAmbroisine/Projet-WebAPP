@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @CrossOrigin
-@RequestMapping("product")
+@RequestMapping("products")
 @RestController
 @RequiredArgsConstructor
 public class ProductController {
