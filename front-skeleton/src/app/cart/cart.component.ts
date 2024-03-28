@@ -6,13 +6,14 @@ import { StudentService } from "services/student.service"
 
 @Component({
   selector: "students",
-  templateUrl: "./students.component.html",
-  styleUrls: ["./students.component.scss"],
+  templateUrl: "./cart.component.html",
+  styleUrls: ["./cart.component.scss"],
 })
 
-export class StudentsComponent {
+export class CartComponent {
 
   constructor(private _route: ActivatedRoute, private studentService: StudentService, private router: Router) {}
+
   
   students$: Observable<Student[]> =  this.studentService.findAll()
 

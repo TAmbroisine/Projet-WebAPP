@@ -15,6 +15,7 @@ import { MatButtonModule } from "@angular/material/button"
 import { MajorsComponent } from "majors/majors.component"
 import { MajorStudentsComponent } from "majors/major-students/major-students.component"
 import { HttpClientModule } from "@angular/common/http"
+import { CartComponent } from "cart/cart.component"
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { HttpClientModule } from "@angular/common/http"
     NavbarComponent,
     HomeComponent,
     StudentsComponent,
+    CartComponent,
     StudentDetailsComponent,
     MajorsComponent,
     MajorStudentsComponent,
