@@ -19,7 +19,7 @@ public class In_Cart {
     @JoinColumn(name = "buy_id")
     private Buyer buyer;
 
-    @OneToMany
+    @ManyToMany
     @JoinColumn(name = "product_id")
     private List<Product> products;
 
